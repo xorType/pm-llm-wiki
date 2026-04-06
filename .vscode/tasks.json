@@ -1,0 +1,101 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pm-wiki: Start Watcher",
+      "type": "shell",
+      "command": "go run ./cmd/pm-wiki",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "pm-wiki",
+        "pattern": {
+          "regexp": "^.*$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "pm-wiki starting",
+          "endsPattern": "watching .* for new files"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "group": "pm-wiki"
+      },
+      "group": "build"
+    },
+    {
+      "label": "pm-wiki: Start Watcher (custom model)",
+      "type": "shell",
+      "command": "go run ./cmd/pm-wiki -model ${input:ollamaModel}",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "pm-wiki",
+        "pattern": {
+          "regexp": "^.*$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "pm-wiki starting",
+          "endsPattern": "watching .* for new files"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false
+      }
+    },
+    {
+      "label": "pm-wiki: Build",
+      "type": "shell",
+      "command": "go build -v ./...",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": "$go"
+    },
+    {
+      "label": "pm-wiki: Install binary",
+      "type": "shell",
+      "command": "go install ./cmd/pm-wiki && pm-wiki",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "ollamaModel",
+      "type": "promptString",
+      "description": "Ollama model name",
+      "default": "gemma4:31b-cloud"
+    }
+  ]
+}
