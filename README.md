@@ -156,14 +156,6 @@ You can evolve the schema as your workflow develops. The LLM reads it at the sta
 
 ---
 
-## Why this works
-
-The tedious part of project management documentation is not the thinking — it's the bookkeeping. Updating the decisions log after a call, filing the risk that was raised in passing, keeping the deliverable tracker current, making sure the entity page for a new stakeholder exists and is linked from the right meeting notes. These are the tasks that fall through the cracks and cause wikis to go stale.
-
-LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass. The wiki stays maintained because the cost of maintenance is near zero. Your job is to drop in the source documents and ask the right questions. The LLM does everything else.
-
----
-
 ## Acknowledgements
 
 Inspired by Andrej Karpathy's [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) gist.
