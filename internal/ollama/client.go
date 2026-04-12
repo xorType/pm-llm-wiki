@@ -13,7 +13,7 @@ import (
 const (
 	DefaultBaseURL = "http://localhost:11434"
 	DefaultModel   = "gemma4:31b-cloud"
-	defaultTimeout = 300 * time.Second
+	defaultTimeout = 600 * time.Second
 )
 
 // Client is a minimal HTTP client for the Ollama REST API.
